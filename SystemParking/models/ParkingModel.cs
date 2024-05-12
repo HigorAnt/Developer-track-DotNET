@@ -43,6 +43,7 @@ namespace SystemParking
                     quantityHours = int.Parse(Console.ReadLine());
                     calculateValue(quantityHours);
                     parking.Remove(place);
+                    break;
                 } 
                 else 
                 { 
@@ -51,7 +52,7 @@ namespace SystemParking
             }
         }
         public void calculateValue(int quantityHours) {
-            Console.Write("O veículo precisa pagar R$ " + getValueHour()*quantityHours + getValueInitial());
+            Console.Write("O veículo precisa pagar R$ " + (getValueHour()*quantityHours) + getValueInitial());
         }
         public void printCar() 
         {
