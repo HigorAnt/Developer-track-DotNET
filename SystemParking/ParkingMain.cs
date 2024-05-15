@@ -40,7 +40,7 @@ namespace SystemParking
                         parking.removeCar(place);
                         break;
                     default:
-                        Console.WriteLine("Não compreendi");
+                        Console.WriteLine("Sistema encerrado!");
                         break;
                 }
             } while(option!=3);
