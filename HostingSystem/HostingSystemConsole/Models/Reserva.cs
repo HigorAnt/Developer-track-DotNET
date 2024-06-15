@@ -39,6 +39,16 @@ public class Reserva
         {
             Console.WriteLine(hospede.Nome.ToString());
         }
+        int hospedeSaida = int.Parse(Console.ReadLine());
+
+        for(int i = 0; i < hospedes.Count; i++)
+        {
+            if(hospedeSaida == i)
+            {
+                hospedes.Remove(hospede);
+                break;
+            }
+        }
 
         Console.WriteLine("Quantos dias o hóspede passou na súite?");
         diasReservados = int.Parse(Console.ReadLine());
