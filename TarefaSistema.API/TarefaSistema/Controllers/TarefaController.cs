@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Extensions;
+using System.Globalization;
 using TarefaSistema.Context;
 using TarefaSistema.Model;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -60,6 +61,13 @@ public class TarefaController : ControllerBase
     public IActionResult ObterPorStatus(int status)
     {
         var tarefa = _context.Tarefas.Where(h => (int)h.Status == status);
+
+        return Ok(tarefa);
+    }
+    [HttpGet("ObterPorDescricao")]
+    public IActionResult ObtetPorDescricao(string descricao)
+    {
+        var tarefa = _context.Tarefas.Where(h => h.Descricao.Contains(descricao)); 
 
         return Ok(tarefa);
     }
